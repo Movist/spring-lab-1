@@ -1,0 +1,8 @@
+<form action="#" th:action="@{/add}" th:object="${enrollee}" method="post">
+
+
+    <p>ФИО: <input type="text" th:field="${enrollee.fullName}"/></p>
+    <p>Дата рождения: <input type="date" th:field="${enrollee.birthday}"/></p>
+
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+</form>

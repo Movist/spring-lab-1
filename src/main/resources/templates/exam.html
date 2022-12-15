@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>Добавление экзамена</title>
+    <link rel="stylesheet" href="#"/>
+</head>
+<body>
+
+<form th:action="@{/exam/{id}}" th:object="${exam}" th:method="POST">
+
+    <p><input hidden type="text" placeholder="id" th:field="*{id}"/></p>
+    <p><input type="text" placeholder="Предмет" th:field="*{subject}"/>subject</p>
+    <p><input type="text" placeholder="Балл" th:field="*{score}"/>score</p>
+
+    <p><input type="submit" value="Submit"/><input type="reset" value="Reset"/></p>
+
+</form>
+</body>
+</html>

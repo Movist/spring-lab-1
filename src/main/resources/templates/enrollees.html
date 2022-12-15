@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Title</title>
+</head>
+<body>
+<header th:insert="header::header"></header>
+<h2>Список абитуриентов:</h2>
+<ul th:each="enrollee : ${enrollees}">
+    <li th:text="'ID ' + ${enrollee.id} + ' ФИО: ' + ${enrollee.fullName}"></li>
+    <a th:text="${enrollee.id} + ' ' + ${enrollee.fullName}" th:href="@{/enrollees/{id} (id=${enrollee.getId()})}">enrollee name</a>
+    <a th:href="@{/exam/{id} (id=${enrollee.getId()})}">Добавить экзамен</a>
+</ul>
+<a th:href="@{/add}">Добавить абитуриента</a>
+<footer th:insert="footer::footer"></footer>
+</body>
+</html>

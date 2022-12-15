@@ -1,0 +1,16 @@
+<p th:text="'ID: ' + ${enrollee.getId()}"/>
+<p th:text="'Абитуриент: ' + ${enrollee.getFullName()}"/>
+<p th:text="'Дата рождения: ' + ${enrollee.getBirthday()}"/>
+
+<table th:if="${exams}!= null">
+    <tr>
+        <th>Экзамен</th>
+        <th>Балл</th>
+        <th>Проход</th>
+    </tr>
+    <tr th:each="exam : ${exams}">
+        <td th:text="${exam.subject}">Label</td>
+        <td th:text="${exam.score}">11</td>
+        <td th:text="${exam.score>80}? ${true} : ${false}">yes</td>
+    </tr>
+</table>
